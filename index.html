@@ -9,9 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-    Enter first name : <input type="text" id="fname" ><br>
-    Enter last name :<input type="text" id="lname"><br>
-    <button type="button" class="btn btn-success" onclick="newalert()">Submit</button>
-    <script src = "index.js"></script>
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label class="form-label" for="firstname">First Name:</label>
+                <input class="form-input" type="text" id="fname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="lastname">Last Name:</label>
+                <input class="form-input" type="text" id="lname" name="lastname" required>
+            </div>
+            <button type="button" class="btn btn-success" onclick="newalert()">Submit</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
