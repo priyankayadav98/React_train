@@ -8,11 +8,36 @@ import Navigation from "./Components/Navigation";
 import Alert from "./Components/Alert";
 function App() {
   const items = ["java", "C", "python"];
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowAlert(true);
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+  };
+
   return (
     <>
-      <Navigation />
       <>
         <Message course={3} />
+        <Navigation btn_msg="Login" onClick={handleButtonClick} />t
+        {showAlert && (
+          <div
+            className="alert alert-warning alert-dismissible fade show"
+            role="alert"
+          >
+            Alert! This is an example alert.
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+              onClick={handleCloseAlert}
+            ></button>
+          </div>
+        )}
         <>
           <div>
             <Content_New />
@@ -20,7 +45,9 @@ function App() {
           </div>
         </>
         <Footer_Message />
-        <Alert />
+        <Alert>
+          <b>Hey There children</b>
+        </Alert>
       </>
     </>
   );
