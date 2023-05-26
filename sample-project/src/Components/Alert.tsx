@@ -1,9 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
+interface Props {
+  children: ReactNode;
+}
 
-const Alert = () => {
+const Alert = ({ children }: Props) => {
   return (
-    <div className="alert alert-info" role="alert">
-      A simple info alert—check it out!
+    <div className="alert alert-primary" role="alert">
+      A simple primary alert—check it out!
     </div>
   );
 };
