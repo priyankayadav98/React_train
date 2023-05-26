@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
-function Menu_item() {
-  const items: Array<string> = ["java", "C", "python"];
+interface Props {
+  menuItems: string[];
+}
+// function Menu_item(props: Props) {
+function Menu_item({ menuItems }: Props) {
+  const items = menuItems;
+
   const [selectedItem, setSelectedItem] = useState("");
 
   const handleClick = (item: string) => {

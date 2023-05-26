@@ -1,6 +1,12 @@
-function Message()
-{
-    return <div className="text-center">
-   <h1 className="text-info">Welcome to My-app!</h1></div>
+interface Props {
+  course: number;
 }
-export default Message
+
+function Message(props: Props) {
+  return (
+    <div className="text-center">
+      <h1 className="text-info">Welcome to the {props.course} on My-app!</h1>
+    </div>
+  );
+}
+export default Message;

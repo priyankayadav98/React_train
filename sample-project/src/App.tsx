@@ -6,15 +6,16 @@ import Content_New from "./Components/content-new";
 import Footer_Message from "./Components/Foot-Message";
 import Navigation from "./Components/Navigation";
 function App() {
+  const items = ["java", "C", "python"];
   return (
     <>
       <Navigation />
       <>
-        <Message />
+        <Message course={3} />
         <>
           <div>
             <Content_New />
-            <Menu_item />
+            <Menu_item menuItems={items} />
           </div>
         </>
         <Footer_Message />
