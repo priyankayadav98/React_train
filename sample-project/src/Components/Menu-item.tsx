@@ -1,21 +1,28 @@
-import { MouseEvent } from "react";
+import React, { useState } from "react";
+
 function Menu_item() {
   const items: Array<string> = ["java", "C", "python"];
-  const handleClick = (index: number, event: MouseEvent) => {
-    console.log(index + " " + event.type);
+  const [selectedItem, setSelectedItem] = useState("");
+
+  const handleClick = (item: string) => {
+    setSelectedItem(item);
   };
   return (
     <>
       <div className="w-25 p-3">
-        {items.length === 0 && <p>No Items is found in the list</p>}
+        {items.length === 0 && <p>No Items found in the list</p>}
         <ul className="list-group">
-          {items.map((x, index) => (
+          {items.map((item, index) => (
             <li
-              className="list-group-item "
-              key={x}
-              onClick={(event) => handleClick(index, event)}
+              className={
+                selectedItem === item
+                  ? "list-group-item active"
+                  : "list-group-item"
+              }
+              key={index}
+              onClick={() => handleClick(item)}
             >
-              {x}
+              {item}
             </li>
           ))}
         </ul>
@@ -23,4 +30,5 @@ function Menu_item() {
     </>
   );
 }
+
 export default Menu_item;
