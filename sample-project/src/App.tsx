@@ -5,6 +5,7 @@ import Message from "./Components/Message";
 import Content_New from "./Components/content-new";
 import Footer_Message from "./Components/Foot-Message";
 import Navigation from "./Components/Navigation";
+import Alert from "./Components/Alert";
 function App() {
   const items = ["java", "C", "python"];
   return (
@@ -19,6 +20,7 @@ function App() {
           </div>
         </>
         <Footer_Message />
+        <Alert />
       </>
     </>
   );
